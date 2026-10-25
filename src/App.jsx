@@ -18,6 +18,7 @@ const experience = [
       'Built backend and web dashboard workflows to configure assessment versions and assign scoring models to customer organizations, including migration of legacy assessment data.',
       'Designed feature flags to selectively roll out features across customer organizations, with configurable defaults, organization-level overrides, and access controls.',
       'Established a reproducible full-stack testing environment using Docker, PostgreSQL, Redis, and Playwright, with isolated test data, parallel execution, and GitLab CI integration to test authentication, permissions, and organization workflows.',
+      'Automated and validated all critical and high-priority end-to-end test scenarios, using AI tools connected to Jira and Confluence to accelerate development.',
       'Developed API contract tests using response requirements derived from the iOS app\'s repository, integrating them into the API test suite and GitLab CI pipeline to detect compatibility issues.',
       'Built localized audit reporting with exports in CSV, HTML, and PDF formats. Used chunked PDF generation to manage memory usage for large reports.'
     ]
