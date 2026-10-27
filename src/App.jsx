@@ -12,14 +12,14 @@ const experience = [
     company: 'Altoida',
     role: 'Senior Software Engineer',
     dates: 'July 2025 - October 2026',
-    summary: 'Built and maintained a digital health cognitive assessment platform using React, Node.js, PostgreSQL, and AWS, working across frontend, backend, and CI/CD infrastructure and collaborating with iOS and Data Science teams.',
     bullets: [
-      'Integrated Altoida\'s iOS app with the Data Science team\'s assessment-processing pipeline through the API, handling S3 uploads, asynchronous messaging through AWS SNS and SQS, and automatic retries.',
-      'Built backend and web dashboard workflows to configure assessment versions and assign scoring models to customer organizations, including migration of legacy assessment data.',
-      'Designed feature flags to selectively roll out features across customer organizations, with configurable defaults, organization-level overrides, and access controls.',
-      'Established a reproducible full-stack testing environment using Docker, PostgreSQL, Redis, and Playwright, with isolated test data, parallel execution, and GitLab CI integration to test authentication, permissions, and organization workflows.',
-      'Automated and validated all critical and high-priority end-to-end test scenarios, using AI tools connected to Jira and Confluence to accelerate development.',
-      'Developed API contract tests using response requirements derived from the iOS app\'s repository, integrating them into the API test suite and GitLab CI pipeline to detect compatibility issues.',
+      'Led web dashboard and backend API development for Altoida\'s cognitive assessment platform, collaborating with iOS and Data Science teams.',
+      'Took ownership of a multi-year initiative mid-development to enable multiple cognitive assessments and scoring models. Completed feature development on schedule for the planned year-end release by resolving requirements gaps, finishing the remaining frontend and backend work, and writing migration scripts for legacy assessment data. Used AI tools connected to Jira and Confluence to accelerate requirements review and implementation.',
+      'Built the platform’s Playwright end-to-end test suite from the ground up, initially covering critical scenarios in an isolated Docker environment that recreated the QA stack (Node.js, PostgreSQL). Integrated it into GitLab CI, then expanded coverage to high-priority scenarios, growing the suite from 76 to 128 tests while cutting E2E job runtime by 56% through parallel execution and setup optimizations.',
+      'Implemented the API integration connecting Altoida\'s iOS app with the Data Science assessment-processing pipeline, handling S3 uploads, SNS processing requests, and SQS model results with automatic retries. Collaborated with Data Science on the message contract while preserving legacy assessment processing.',
+      'Promoted AI-assisted workflows through team demos, pairing one model to draft code, tickets, and documentation with another to review them, while emphasizing human review and technical judgment.',
+      'Designed and implemented a feature flag system that let administrators enable features such as multi-assessment workflows and third-party integrations for selected customer organizations from the web dashboard without redeployments.',
+      'Developed contract tests for all 40 API endpoints used by the iOS app, deriving response requirements from its repository. Integrated the tests into GitLab CI to automatically detect API compatibility issues.',
       'Built localized audit reporting with exports in CSV, HTML, and PDF formats. Used chunked PDF generation to manage memory usage for large reports.'
     ]
   },
@@ -27,14 +27,13 @@ const experience = [
     company: 'Atlas5D',
     role: 'Principal Web Developer',
     dates: 'November 2019 - March 2025',
-    summary: 'Architected and developed the web application stack for the Ambient Measurement System (AMS) healthcare IoT platform using React, TypeScript, MobX, and Node.js, integrating patient mobility monitoring, device management, cloud processing, and data visualization. Managed AWS infrastructure, including EC2, and maintained application uptime.',
     bullets: [
-      'Designed and implemented bidirectional IoT communication using AWS IoT MQTT, Redis pub/sub, and Socket.IO, bringing device telemetry and remote management into the web platform.',
+      'Architected the web stack for a healthcare IoT platform that monitored patient mobility. Built its frontend, backend, and AWS infrastructure, including patient-data visualization and device-management tools.',
+      'Implemented bidirectional device communication using AWS IoT MQTT, Redis pub/sub, and Socket.IO for telemetry and device control. Developed a companion React Native/Expo mobile app with authentication, device configuration, camera integration, and remote device management.',
+      'Built and maintained CI/CD pipelines using Jenkins, GitHub Actions, and AWS Elastic Beanstalk, supporting environment-specific releases, automated Lambda deployments, and blue/green traffic switching.',
       'Refactored device measurement retrieval and processing across AWS Lambda, DynamoDB, and Node.js APIs to support historical visualization, cached metrics, and patient activity analysis.',
       'Delivered user-configurable real-time alerts using AWS SNS and SES, with targeted, user-scoped DynamoDB queries to optimize alert processing.',
       'Built patient identification workflows using Python-based facial recognition, AWS Lambda, S3, and asynchronous device-side training and validation.',
-      'Built and maintained CI/CD pipelines using Jenkins, GitHub Actions, and AWS Elastic Beanstalk, supporting environment-specific releases, automated Lambda deployments, and blue/green traffic switching.',
-      'Developed a companion React Native/Expo mobile application supporting authentication, device configuration, camera integration, and remote device management.'
     ]
   },
   {
@@ -62,7 +61,7 @@ const experience = [
     role: 'Lead Web Applications Developer',
     dates: 'January 2008 - February 2012',
     bullets: [
-      'Architected and developed educational web applications and rich-media eBook experiences using JavaScript, Java, Google Web Toolkit, Flash, and ActionScript.'
+      'Architected and developed educational web applications and interactive eBook experiences using JavaScript and Java.'
     ]
   }
 ];
@@ -70,8 +69,8 @@ const experience = [
 const skillGroups = [
   { label: 'Languages', skills: 'TypeScript, JavaScript, Python, Java' },
   { label: 'Frontend & Mobile', skills: 'React, React Native, Redux, MobX, Expo, HTML, CSS/SCSS' },
-  { label: 'Backend & Data', skills: 'Node.js, Express, Spring Boot, PostgreSQL, DynamoDB, Redis' },
-  { label: 'Cloud & DevOps', skills: 'AWS (Lambda, IoT, S3, SQS), Docker, GitLab CI/CD, GitHub Actions, Jenkins' },
+  { label: 'Backend & Data', skills: 'Node.js, Express, Spring Boot, Sequelize, PostgreSQL, DynamoDB, Redis' },
+  { label: 'Cloud & DevOps', skills: 'AWS (EC2, Lambda, IoT, CloudWatch), Docker, GitLab CI/CD, GitHub Actions, Jenkins' },
   { label: 'Testing & APIs', skills: 'Playwright, Jest, REST, GraphQL, OpenAPI' }
 ];
 
@@ -130,11 +129,7 @@ export default function App() {
         </Box>
         <Typography component='p' className='resume-summary'>
           {view === 'designed' && <><strong>TL;DR:</strong>{' '}</>}
-          Senior Software Engineer and technical lead with nearly 20 years of experience
-          delivering web and mobile applications across the entire software development lifecycle. Core
-          technologies include React, TypeScript, Node.js, and AWS. Combines product development with the
-          tooling and processes that help teams spend more time shipping software and less time fighting
-          infrastructure.
+          Senior full stack engineer and technical lead with nearly two decades of experience delivering web applications across the full software development life cycle. I specialize in React, TypeScript, Node.js, and AWS. I also believe building and shipping software should be the hard part, not developer friction. So I improve the tools and processes that help teams spend more time actually doing the building and shipping, and less time dealing with the stuff in between.
         </Typography>
       </Box>
 
@@ -150,9 +145,6 @@ export default function App() {
                 <Typography component='p' className='job-dates'>{job.dates}</Typography>
               </Box>
               <Typography component='p' className='job-role'>{job.role}</Typography>
-              {job.summary && (
-                <Typography component='p' className='job-summary'>{job.summary}</Typography>
-              )}
               <Box component='ul' className='accomplishments'>
                 {job.bullets.map(bullet => <li key={bullet}>{bullet}</li>)}
               </Box>
