@@ -13,14 +13,14 @@ const experience = [
     role: 'Senior Software Engineer',
     dates: 'July 2025 - October 2026',
     bullets: [
-      'Led web dashboard and backend API development for Altoida\'s cognitive assessment platform, collaborating with iOS and Data Science teams.',
-      'Took ownership of a multi-year initiative mid-development to enable multiple cognitive assessments and scoring models. Completed feature development on schedule for the planned year-end release by resolving requirements gaps, finishing the remaining frontend and backend work, and writing migration scripts for legacy assessment data. Used AI tools connected to Jira and Confluence to accelerate requirements review and implementation.',
+      'Led web dashboard and API development for Altoida\'s cognitive assessment platform, collaborating with iOS and Data Science teams.',
+      'Took over development of a multi-year platform expansion to enable multiple cognitive assessments and scoring models. Completed feature development on schedule for the planned year-end release by resolving requirements gaps, finishing the remaining work across the web stack, and writing scripts to migrate legacy assessment data to the new database schema.',
+      'Expanded the API integration between Altoida’s iOS app and the Data Science pipeline. Worked with Data Science to establish the message contract and built SNS/SQS messaging with automatic retries. Refactored existing S3 upload and assessment-processing code to improve error handling and maintainability.',
       'Built the platform’s Playwright end-to-end test suite from the ground up, initially covering critical scenarios in an isolated Docker environment that recreated the QA stack (Node.js, PostgreSQL). Integrated it into GitLab CI, then expanded coverage to high-priority scenarios, growing the suite from 76 to 128 tests while cutting E2E job runtime by 56% through parallel execution and setup optimizations.',
-      'Implemented the API integration connecting Altoida\'s iOS app with the Data Science assessment-processing pipeline, handling S3 uploads, SNS processing requests, and SQS model results with automatic retries. Collaborated with Data Science on the message contract while preserving legacy assessment processing.',
-      'Promoted AI-assisted workflows through team demos, pairing one model to draft code, tickets, and documentation with another to review them, while emphasizing human review and technical judgment.',
       'Designed and implemented a feature flag system that let administrators enable features such as multi-assessment workflows and third-party integrations for selected customer organizations from the web dashboard without redeployments.',
       'Developed contract tests for all 40 API endpoints used by the iOS app, deriving response requirements from its repository. Integrated the tests into GitLab CI to automatically detect API compatibility issues.',
-      'Built localized audit reporting with exports in CSV, HTML, and PDF formats. Used chunked PDF generation to manage memory usage for large reports.'
+      'Built localized audit reporting with exports in CSV, HTML, and PDF formats. Used chunked PDF generation to manage memory usage and reduce Node.js event-loop blocking for large reports.',
+      'Used AI tools connected to Altoida’s documentation and communication systems in daily workflows to accelerate requirements review and implementation. Promoted AI adoption through team demos showing how one model could draft code, tickets, and documentation while another reviewed the output, emphasizing human review and technical judgment.'
     ]
   },
   {
